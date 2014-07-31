@@ -33,7 +33,6 @@ class MainController extends BaseController{
 	# If there is a query, search the library with that query
 		if($query) {
 
-		
 		# Here's a better option because it searches across multiple fields
 			$questions = Question::where('Question', 'LIKE', "%$query%")
 				->orWhere('Context', 'LIKE', "%$query%")
@@ -51,35 +50,49 @@ class MainController extends BaseController{
 
 	public function processallquestions(){
 
-			//go to all my forums page and print all attached questions then you can query search them!!
-			//use the pivot table question_user to connect things together!!
 			if($_POST["added_question"]=='add'){
-			
-				$user=User::find(Auth::user()->id);
-				$user->questions()->attach($_POST["question_id"]);	
-				return ' have added the forum to your list!!';
+			// change button to follow or unfollow
+				$user = User::find(Auth::user()->id);
+				
+				if (!$user->questions->contains($_POST["question_id"])) {
+  				
+					$user->questions()->attach($_POST["question_id"]);	
+					return ' you have added the forum to your list!!';
+				
+				}
+				
+				else{	
+				
+				return ' You already have this in your personal library';
 
+				}
 			}
-		
-		else{
-		
-			$questions = Question::all();
-			return View::make('view_all_questions');
-		
-		}
 	}
 
 	public function showallmyforums(){
 
-			//go to all my forums page and print all attached questions then you can query search them!!
-
-		return View::make('view_all_my_forums');
+		$user=User::find(Auth::user()->id);	
+		return View::make('view_all_my_forums')->with('user', $user);	
 	
+}
+	
+	public function processallmyforums(){
+		//if you click on the join forum button
+		//go to all my forums page and print all attached questions then you can query search them!!
 	}
 
-	public function processallmyforums(){
-//if you click on the join forum button
-					//go to all my forums page and print all attached questions then you can query search them!!
+	public function showdebating(){
+		//echo $_POST["question_id"];
+		
+ 
+		return View::make('debating');
+
+	}
+	
+	public function processdebating(){
+		
+		
+		//return View::make('debating');
 
 	}
 

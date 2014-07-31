@@ -25,6 +25,10 @@ Route::get('/view_all_my_forums', array( 'before' => 'auth','uses' => 'MainContr
 
 Route::post('/view_all_my_forums', array( 'before' => 'auth','uses' => 'MainController@processallmyforums'));
 
+Route::get('/debating', array( 'before' => 'auth', 'uses' => 'MainController@showdebating'));
+
+Route::post('/debating', array( 'before' => 'auth', 'uses' => 'MainController@processdebating'));
+
 Route::get('/signup', array( 'before' => 'guest', 'uses' => 'AuthenticationController@showsignup'));
 
 Route::post('/signup', array('before' => 'csrf', 'uses' => 'AuthenticationController@proccesssignup'));

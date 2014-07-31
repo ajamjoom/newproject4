@@ -10,10 +10,18 @@
 
  	<h1>my forums</h1>
 	
-	@foreach($questions as $question)
-	
+	@foreach ($user->questions as $question)
+    
+		{{ Form::open(array('url' => '/debating' , 'method' => 'POST')) }}
+
+			{{ Form::hidden('question_id', $question['id']) }}
+
+			{{ Form::submit(' Debate') }}
+
+		{{ Form::close() }}
 		<br>
-	
+		{{$question['id']}}
+		<br>
 		{{$question['Question']}}
 	
 		<br>
@@ -25,6 +33,9 @@
 		{{$question['Genre']}}
 		
 		<br>
-		<hr>
-		@endforeach
+		<hr>	
+	
+	@endforeach
  @stop
+
+
