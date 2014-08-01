@@ -71,18 +71,21 @@ class MainController extends BaseController{
 
 	public function showallmyforums(){
 
-		$user=User::find(Auth::user()->id);	
-		return View::make('view_all_my_forums')->with('user', $user);	
+			$user=User::find(Auth::user()->id);	
+			return View::make('view_all_my_forums')->with('user', $user);
 	
 }
 	
 	public function processallmyforums(){
-		//if you click on the join forum button
-		//go to all my forums page and print all attached questions then you can query search them!!
+	
+		$user = User::find(Auth::user()->id);
+		$user->questions()->detach($_POST["question_id"]);
+		return View::make('view_all_my_forums')->with('user', $user);
+
 	}
 
 	public function showdebating(){
-		//echo $_POST["question_id"];
+		echo $_POST['question_id'];
 		
  
 		return View::make('debating');
@@ -91,8 +94,9 @@ class MainController extends BaseController{
 	
 	public function processdebating(){
 		
-		
-		//return View::make('debating');
+		echo $_POST['question_id'];
+
+		return View::make('debating');
 
 	}
 

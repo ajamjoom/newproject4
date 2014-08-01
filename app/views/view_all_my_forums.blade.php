@@ -20,6 +20,16 @@
 
 		{{ Form::close() }}
 		<br>
+		{{ Form::open(array('url' => '/view_all_my_forums' , 'method' => 'POST')) }}
+
+			{{ Form::hidden('question_id', $question['id']) }}
+			{{ Form::hidden('delete_from_library', 'delete') }}
+
+			{{ Form::submit(' unfollow') }}
+
+		{{ Form::close() }}
+		
+		<br>
 		{{$question['id']}}
 		<br>
 		{{$question['Question']}}
