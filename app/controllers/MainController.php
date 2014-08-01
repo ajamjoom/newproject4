@@ -85,7 +85,6 @@ class MainController extends BaseController{
 	}
 
 	public function showdebating(){
-		echo $_POST['question_id'];
 		
  
 		return View::make('debating');
@@ -94,9 +93,9 @@ class MainController extends BaseController{
 	
 	public function processdebating(){
 		
-		echo $_POST['question_id'];
+		//echo $_POST['question_id'];
 
-		return View::make('debating');
+		return View::make('debating')->with ('question_id', $_POST['question_id']);
 
 	}
 

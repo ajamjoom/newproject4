@@ -9,6 +9,6 @@
  @section('content')
 
  	<h1>Debate here</h1>
-
+{{$question_id}}
 	
  @stop
