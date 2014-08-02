@@ -30,8 +30,6 @@
 		{{ Form::close() }}
 		
 		<br>
-		{{$question['id']}}
-		<br>
 		{{$question['Question']}}
 	
 		<br>

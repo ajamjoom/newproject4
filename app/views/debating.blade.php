@@ -9,6 +9,12 @@
  @section('content')
 
  	<h1>Debate here</h1>
-{{$question_id}}
+<br>
+{{$questions['Question']}}
+<br>
+{{$questions['Context']}}
+<br>
+{{$questions['Genre']}}
+
 	
  @stop

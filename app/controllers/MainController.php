@@ -84,19 +84,17 @@ class MainController extends BaseController{
 
 	}
 
-	public function showdebating(){
+	//public function showdebating(){
 		
- 
-		return View::make('debating');
+	//	return View::make('debating');
 
-	}
+	//}
 	
 	public function processdebating(){
 		
-		//echo $_POST['question_id'];
-
-		return View::make('debating')->with ('question_id', $_POST['question_id']);
-
+		$questions = Question::find($_POST["question_id"]);	
+		return View::make('debating')->with ('questions', $questions);
+	
 	}
 
 }
