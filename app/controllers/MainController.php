@@ -87,7 +87,26 @@ class MainController extends BaseController{
 	public function showdebating(){
 		
 		$question = Question::find($_GET["question_id"]);	
-		return View::make('debating')->with ('question', $question);
+		
+		$answer = Answer::all();
+		
+		$all_answers = array();
+		
+		foreach($answer as $answers){
+			
+				if ($answers['question_id'] == $_GET["question_id"]){
+			
+					//echo $answers['answer'];
+					//echo "<br />";
+					$all_answers[] = $answers;
+				}
+		}
+		
+		//foreach($all_answers as $answers){
+		//	echo $answers['answer'];
+		//}
+
+		return View::make('debating')->with ('question', $question)->with('all_answers', $all_answers);
 
 	}
 	
@@ -106,7 +125,7 @@ class MainController extends BaseController{
 
 		$answers->answer = Input::get('answer');
 		$answers->question_id = Input::get('question_id');
-		//dd($answers);
+
 		$answers->save();
 
 		return "answered!!";

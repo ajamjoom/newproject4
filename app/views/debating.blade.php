@@ -17,6 +17,12 @@
 <br>
 {{$question['Genre']}}
 <br>
+<hr>
+<hr>
+@foreach( $all_answers as $answers)
+{{$answers['answer']}}
+<br>
+@endforeach
 <!--
 {{ Form::open(array('url' => 'debating','files' => true)) }}
 
@@ -30,10 +36,11 @@
 
     
     Answer: {{ Form::textarea('answer') }} <br><br>
-        {{ Form::text('question_id', $question['id']) }}
+    {{ Form::text('question_id', $question['id']) }}
 
 
     {{ Form::submit('Submit Answer!') }}
 
   {{ Form::close() }}
+ 
  @stop
