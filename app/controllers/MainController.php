@@ -115,6 +115,7 @@ class MainController extends BaseController{
 		$answers->question_id = Input::get('question_id');
 
 		$answers->save();
+		
 
 		return "answered!!";
 
