@@ -27,7 +27,10 @@
 
 <br>
 @foreach( $all_answers as $answers)
-{{$user['username']}}
+<?php 
+$user = User::find($answers['user_id']) ;
+echo $user['username'];
+?>
 {{':'}}
 <br>
 {{$answers['answer']}}
