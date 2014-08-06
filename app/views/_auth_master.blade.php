@@ -17,9 +17,9 @@
         <div class='flash-message'>{{ Session::get('flash_message') }}</div>
     @endif
     @if(Auth::check())
-    <a href='/logout'>Log out {{ Auth::user()->username; }}</a>
+    <a href='/logout'>Log Out {{ Auth::user()->username; }}</a>
 	@else 
-    <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a>
+    <a href='/signup'>Sign Up</a> or <a href='/login'>Log In</a>
 	@endif
 	
 	@yield('content')

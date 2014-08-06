@@ -2,17 +2,28 @@
  
  @section('title')
  
- 		Welcome to What??
+ 		What??
 
  @stop
 
  @section('content')
 
- 	<h1>homepage</h1>
+ 	<h1>Welcome to What??</h1>
+ 	
+ 	<p>
+ 		What?? Is Solely based on the idea that wisdom must be shared and must always be debated upon.  What?? Will provide you the perfect platform to ask questions and actively debate them with others till a conclusion is reached.
+	<br>
+		Have fun,
+	<br>
+		Abdul
+
+	</p>
+
+
  	{{ Form::open(array('url' => '/view_all_questions', 'method' => 'GET')) }}
 
-		{{ Form::label('query','Search for a question:') }} &nbsp;
-		{{ Form::text('query') }} &nbsp;
+		{{ Form::label('query','Search for questions:') }} &nbsp;
+		{{ Form::text('query', 'Search by Question, Genre or Context') }} &nbsp;
 		{{ Form::submit('Search!') }}
 
 	{{ Form::close() }}

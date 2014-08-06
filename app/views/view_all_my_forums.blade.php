@@ -2,13 +2,13 @@
  
  @section('title')
  
- 		All your forums
+ 		My Library
 
  @stop
 
  @section('content')
 
- 	<h1>my forums</h1>
+ 	<h1>My Library</h1>
 	
 	@foreach ($user->questions as $question)
     
@@ -16,7 +16,7 @@
 
 			{{ Form::hidden('question_id', $question['id']) }}
 
-			{{ Form::submit(' Debate') }}
+			{{ Form::submit(' Open Forum') }}
 
 		{{ Form::close() }}
 		<br>
@@ -25,7 +25,7 @@
 			{{ Form::hidden('question_id', $question['id']) }}
 			{{ Form::hidden('delete_from_library', 'delete') }}
 
-			{{ Form::submit(' unfollow') }}
+			{{ Form::submit(' Delete') }}
 
 		{{ Form::close() }}
 		

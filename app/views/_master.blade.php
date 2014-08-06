@@ -18,20 +18,20 @@
     @endif
 
     @if(Auth::check())
-    <a href='/logout'>Log out {{ Auth::user()->username; }}</a>
+    <a href='/logout'>Log Out {{ Auth::user()->username; }}</a>
 	@else 
-    <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a>
+    <a href='/signup'>Sign Up</a> or <a href='/login'>Log In</a>
 	@endif
 
 	<dev class='linksbar'>
 	 	<br>
-	 	<a href = '/'> Home </a>
+	 	<a href = '/'>Home</a>
 	 	<br>
-	 	<a href = '/add_question'> Add Questions </a>
+	 	<a href = '/add_question'>Ask a Question</a>
 	 	<br>
-	 	<a href = '/view_all_questions'> All Questions </a>
+	 	<a href = '/view_all_questions'>View All Questions</a>
 	 	<br>
-	 	<a href = '/view_all_my_forums'> My Questions </a>
+	 	<a href = '/view_all_my_forums'>My Library</a>
 	</dev>
 	
 	@yield('content')

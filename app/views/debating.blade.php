@@ -2,13 +2,13 @@
  
  @section('title')
  
- 		Debate/Discuss
+ 		Forum
 
  @stop
 
  @section('content')
 
- 	<h1>Debate here</h1>
+ 	<h1>Forum</h1>
 
 <br>
 {{$question['Question']}}

@@ -2,13 +2,13 @@
  
  @section('title')
  
- 		Sign-up
+ 		Sign Up
 
  @stop
 
  @section('content')
 
- 	<h1>Sign up</h1>
+ 	<h1>Sign Up</h1>
 
 {{ Form::open(array('url' => '/signup')) }}
 

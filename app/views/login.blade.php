@@ -8,7 +8,7 @@
 
  @section('content')
 	
-	<h1>Log in</h1>
+	<h1>Log In</h1>
 
 	{{ Form::open(array('url' => '/login')) }}
 

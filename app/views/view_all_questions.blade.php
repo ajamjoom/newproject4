@@ -8,12 +8,12 @@
 
  @section('content')
 
- 	<h1>all Q</h1>
+ 	<h1>Previously Asked Questions</h1>
 
  	{{ Form::open(array('url' => '/view_all_questions', 'method' => 'GET')) }}
 
-		{{ Form::label('query','Search for a question:') }} &nbsp;
-		{{ Form::text('query') }} &nbsp;
+		{{ Form::label('query','Search for questions:') }} &nbsp;
+		{{ Form::text('query', 'Search by Question, Genre or Context') }} &nbsp;
 		{{ Form::submit('Search!') }}
 
 	{{ Form::close() }}
@@ -27,7 +27,7 @@
 			{{ Form::hidden('added_question', 'add') }}
 			{{ Form::hidden('question_id', $question['id']) }}
 
-			{{ Form::submit('Join Forum') }}
+			{{ Form::submit('+ Add to Library') }}
 
 		{{ Form::close() }}
 	

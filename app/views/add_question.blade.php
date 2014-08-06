@@ -2,13 +2,13 @@
  
  @section('title')
  
- 		Ask a Question
+ 		Ask!
 
  @stop
 
  @section('content')
 
- 	<h1>Ask a Question, Start a new discussion forum!</h1>
+ 	<h1>"Wisdom begins in wonder." -Socrates</h1>
 
  	{{ Form::open(array('url' => '/add_question', 'method' => 'POST')) }}
 
@@ -24,7 +24,7 @@
 			'Health' => 'Health'
 			), 'Politics')}} <br><br>
 
-		{{ Form::submit('Open Forum!') }}
+		{{ Form::submit(' Ask! ') }}
 
 	{{ Form::close() }}
 
