@@ -19,6 +19,7 @@
 			{{ Form::submit(' Open Forum') }}
 
 		{{ Form::close() }}
+
 		<br>
 		{{ Form::open(array('url' => '/view_all_my_forums' , 'method' => 'POST')) }}
 
@@ -30,13 +31,17 @@
 		{{ Form::close() }}
 		
 		<br>
+		{{"Question:"}}
+
 		{{$question['Question']}}
 	
 		<br>
+		{{"Context:"}}
 
 		{{$question['Context']}}
 	
 		<br>
+		{{"Genre:"}}
 		
 		{{$question['Genre']}}
 		

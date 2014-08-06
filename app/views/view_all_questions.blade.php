@@ -32,15 +32,18 @@
 		{{ Form::close() }}
 	
 		<br>
-	
+		{{"Question:"}}
+
 		{{$question['Question']}}
 	
 		<br>
+		{{"Context:"}}
 
 		{{$question['Context']}}
 	
 		<br>
-		
+		{{"Genre:"}}
+
 		{{$question['Genre']}}
 		
 		<br>

@@ -86,6 +86,8 @@ class MainController extends BaseController{
 
 	public function showdebating(){
 		
+		$user = User::find(Auth::user()->id);
+
 		$question = Question::find($_GET["question_id"]);	
 		
 		$answer = Answer::all();
@@ -99,7 +101,7 @@ class MainController extends BaseController{
 				}
 		}
 
-		return View::make('debating')->with ('question', $question)->with('all_answers', $all_answers);
+		return View::make('debating')->with ('question', $question)->with('all_answers', $all_answers)->with ('user', $user);
 
 	}
 	
