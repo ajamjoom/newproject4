@@ -7,10 +7,9 @@ return array(
         'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'what??',
-            'username'  => 'jarlene',
-            'password'  => 'D4A0lRUY',
-            'path' => 'tunnel.pagodabox.com:3306',
+            'database'  => 'Project4/what',
+            'username'  => 'raquel',
+            'password'  => 'ERmiulLW',
         ),
 
     ),

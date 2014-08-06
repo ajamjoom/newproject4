@@ -12,4 +12,4 @@
 |
 */
 
-return 'local';
+return 'production';
