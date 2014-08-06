@@ -24,6 +24,7 @@ class MainController extends BaseController{
 		$questions->save();
 		
 		 return Redirect::to('/add_question')->with('flash_message', 'Question Succefully Posted!!');
+	
 	}
 
 	public function showallquestions(){
@@ -70,14 +71,14 @@ class MainController extends BaseController{
 
 	public function showallmyforums(){
 
-			$user=Auth::user()->id;	
+			$user=User::find(Auth::user()->id);	
 			return View::make('view_all_my_forums')->with('user', $user);
 	
 }
 	
 	public function processallmyforums(){
 	
-		$user = Auth::user()->id;
+		$user = User::find(Auth::user()->id);
 		$user->questions()->detach($_POST["question_id"]);
 		return View::make('view_all_my_forums')->with('user', $user);
 
@@ -94,30 +95,16 @@ class MainController extends BaseController{
 		foreach($answer as $answers){
 			
 				if ($answers['question_id'] == $_GET["question_id"]){
-			
-					//echo $answers['answer'];
-					//echo "<br />";
 					$all_answers[] = $answers;
 				}
 		}
-		
-		//foreach($all_answers as $answers){
-		//	echo $answers['answer'];
-		//}
 
 		return View::make('debating')->with ('question', $question)->with('all_answers', $all_answers);
 
 	}
 	
 	public function processdebating(){
-		//upliading files to database is not working(uploading audio files)
-			//$answers = new Answer();
-			//$answers->Answer = Input::file('Answer');
-			//$answers->save();
-			//return "Answer uploaded!!";
-		//Answer by text
-		
-
+	
 		$answers = new Answer();
 		
 		$answers->user_id = Auth::user()->id;
