@@ -12,7 +12,7 @@
 	
 	@foreach ($user->questions as $question)
     
-		{{ Form::open(array('url' => '/debating' , 'method' => 'POST')) }}
+		{{ Form::open(array('url' => '/debating' , 'method' => 'GET')) }}
 
 			{{ Form::hidden('question_id', $question['id']) }}
 

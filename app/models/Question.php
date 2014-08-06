@@ -7,7 +7,7 @@ class Question extends Eloquent{
             # Author has many Books
             return $this->belongsToMany('User', 'question_user', 'question_id', 'user_id');
         }
-     public function answers(){
-     	return $this->hasMany('Answer');
+     public function responses(){
+     	return $this->hasMany('Response');
      }
 }

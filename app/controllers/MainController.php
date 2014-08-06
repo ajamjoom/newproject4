@@ -84,16 +84,33 @@ class MainController extends BaseController{
 
 	}
 
-	//public function showdebating(){
+	public function showdebating(){
 		
-	//	return View::make('debating');
+		$question = Question::find($_GET["question_id"]);	
+		return View::make('debating')->with ('question', $question);
 
-	//}
+	}
 	
 	public function processdebating(){
+		//upliading files to database is not working(uploading audio files)
+			//$answers = new Answer();
+			//$answers->Answer = Input::file('Answer');
+			//$answers->save();
+			//return "Answer uploaded!!";
+		//Answer by text
 		
-		$questions = Question::find($_POST["question_id"]);	
-		return View::make('debating')->with ('questions', $questions);
+
+		$answers = new Answer();
+		
+		$answers->user_id = Auth::user()->id;
+
+		$answers->answer = Input::get('answer');
+		$answers->question_id = Input::get('question_id');
+		//dd($answers);
+		$answers->save();
+
+		return "answered!!";
+
 	
 	}
 

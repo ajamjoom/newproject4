@@ -27,5 +27,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
             # Author has many Books
             return $this->belongsToMany('Question', 'question_user', 'user_id', 'question_id');
 	}
+ public function responses(){
+     	return $this->hasMany('Response');
+     }
 
 }

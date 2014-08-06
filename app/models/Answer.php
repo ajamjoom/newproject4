@@ -3,8 +3,10 @@
 class Answer extends Eloquent{
 	 
 	
-	 public function questions() {
-            # Author has many Books
-            return $this->belongsTo('Question');
+	 public function users() {
+            return $this->belongsTo('User');
         }
+     public function questions(){
+     	return $this->belongsTo('Question');
+     }
 }
