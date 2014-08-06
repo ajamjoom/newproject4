@@ -6,10 +6,10 @@ return array(
 //change all this to my credentials
         'mysql' => array(
             'driver'    => 'mysql',
-            'host'      => 'localhost',
-            'database'  => 'Project4/what',
-            'username'  => 'raquel',
-            'password'  => 'ERmiulLW',
+            'host'      => 'tunnel.pagodabox.com:3306',
+            'database'  => 'project4',
+            'username'  => 'selene',
+            'password'  => 'hTSWLZJX',
         ),
 
     ),

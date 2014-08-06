@@ -29,11 +29,26 @@ class AuthenticationController extends BaseController{
 	}
 	
 	public function proccesssignup(){
+		$rules = array(
+    		'email' => 'email|unique:users,email',
+    		'password' => 'min:6'   
+		);          
 
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()) {
+
+    		return Redirect::to('/signup')
+        		->with('flash_message', 'Sign up failed; please fix the errors listed below.')
+        		->withInput()
+        		->withErrors($validator);
+			}
+		 
 		 $user = new User;
-            $user->username = Input::get('username');
-            $user->email    = Input::get('email');
-            $user->password = Hash::make(Input::get('password'));
+           
+         $user->username = Input::get('username');
+         $user->email    = Input::get('email');
+         $user->password = Hash::make(Input::get('password'));
 
             # Try to add the user 
             try {
