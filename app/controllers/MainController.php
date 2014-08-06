@@ -22,8 +22,8 @@ class MainController extends BaseController{
 		$questions->Genre = Input::get('Genre');
 
 		$questions->save();
-
-		return "Forum is Published";
+		
+		 return Redirect::to('/add_question')->with('flash_message', 'Question Succefully Posted!!');
 	}
 
 	public function showallquestions(){
@@ -57,13 +57,12 @@ class MainController extends BaseController{
 				if (!$user->questions->contains($_POST["question_id"])) {
   				
 					$user->questions()->attach($_POST["question_id"]);	
-					return ' you have added the forum to your list!!';
+					return Redirect::to('/view_all_questions')->with('flash_message', 'Questions Succefully placed in your Library');
 				
 				}
 				
 				else{	
-				
-				return ' You already have this in your personal library';
+					return Redirect::to('/view_all_questions')->with('flash_message', 'You already have this question in your library');
 
 				}
 			}
@@ -71,14 +70,14 @@ class MainController extends BaseController{
 
 	public function showallmyforums(){
 
-			$user=User::find(Auth::user()->id);	
+			$user=Auth::user()->id;	
 			return View::make('view_all_my_forums')->with('user', $user);
 	
 }
 	
 	public function processallmyforums(){
 	
-		$user = User::find(Auth::user()->id);
+		$user = Auth::user()->id;
 		$user->questions()->detach($_POST["question_id"]);
 		return View::make('view_all_my_forums')->with('user', $user);
 

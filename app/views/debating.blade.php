@@ -23,15 +23,7 @@
 {{$answers['answer']}}
 <br>
 @endforeach
-<!--
-{{ Form::open(array('url' => 'debating','files' => true)) }}
 
-{{ Form::label('audio_file:', 'Audio File:') }}
-{{ Form::file('avatar') }}
-{{ Form::submit('Upload!') }}
-
-{{ Form::close() }}
--->
 {{ Form::open(array('url' => '/debating', 'method' => 'POST')) }}
 
     
@@ -42,5 +34,5 @@
     {{ Form::submit('Submit Answer!') }}
 
   {{ Form::close() }}
- 
+
  @stop

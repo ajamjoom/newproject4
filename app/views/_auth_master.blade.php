@@ -4,8 +4,8 @@
 		<meta charset='utf-8'>
 
 	<title>@yield('title','What??')</title>
-	<link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
-	
+	<link rel="stylesheet" href="//MAXCDN.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
 
 	@yield('head')
 
