@@ -115,10 +115,23 @@ class MainController extends BaseController{
 		$answers->question_id = Input::get('question_id');
 
 		$answers->save();
+
+		$user = User::find(Auth::user()->id);
+
+		$question = Question::find(Input::get('question_id'));	
 		
+		$answer = Answer::all();
+		
+		$all_answers = array();
+		
+		foreach($answer as $answers){
+			
+				if ($answers['question_id'] == Input::get('question_id')){
+					$all_answers[] = $answers;
+				}
+		}
 
-		return "answered!!";
-
+		return View::make('debating')->with ('question', $question)->with('all_answers', $all_answers)->with ('user', $user);
 	
 	}
 
