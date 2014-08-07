@@ -49,8 +49,9 @@
     
 	@endforeach
     <br><br>
-    {{ Form::submit('Submit') }}
-
+<button type="submit" class="btn btn-default btn-sm">
+         <span ></span> Sign Up
+        </button>
 {{ Form::close() }}
 
  @stop

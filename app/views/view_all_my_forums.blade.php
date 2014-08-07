@@ -16,7 +16,7 @@
 
 			{{ Form::hidden('question_id', $question['id']) }}
 
-		<button type="submit" class="btn btn-default btn-lg">
+		<button type="submit" class="btn btn-default btn-sm">
  		<span class="glyphicon glyphicon-comment"></span> Open Forum
 		</button>
 		
@@ -28,7 +28,7 @@
 			{{ Form::hidden('question_id', $question['id']) }}
 			{{ Form::hidden('delete_from_library', 'delete') }}
 
-		<button type="submit" class="btn btn-default btn-lg">
+		<button type="submit" class="btn btn-default btn-sm">
  		 <span class="glyphicon glyphicon-trash"></span>
 		</button>
 		

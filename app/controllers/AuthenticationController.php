@@ -65,7 +65,7 @@ class AuthenticationController extends BaseController{
             # Log the user in
             Auth::login($user);
 
-            return Redirect::to('/')->with('flash_message', '<div class="alert alert-success" role="alert">You have succefully created logged in </div>');
+            return Redirect::to('/')->with('flash_message', '<div class="alert alert-success" role="alert">You have succefully created an account </div>');
 
 		
 	}

@@ -2,13 +2,13 @@
  
  @section('title')
  
- 		Login
+ 		Welcome to What??-Log In
 
  @stop
 
  @section('content')
 	
-	<h1>Log In</h1>
+	<h1>What??</h1>
 
 	{{ Form::open(array('url' => '/login')) }}
 
@@ -18,8 +18,9 @@
     	Password:<br>
     	{{ Form::password('password') }}<br><br>
 
-    	{{ Form::submit('Submit') }}
-
+<button type="submit" class="btn btn-default btn-sm">
+ 		 <span ></span> Log In
+		</button>
 	{{ Form::close() }}
 
 @stop

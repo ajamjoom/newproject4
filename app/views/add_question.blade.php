@@ -24,7 +24,7 @@
 			'Health' => 'Health'
 			), 'Politics')}} <br><br>
 
-<button type="submit" class="btn btn-default btn-lg">
+<button type="submit" class="btn btn-default btn-sm">
  		 <span ></span> Ask!
 		</button>
 	{{ Form::close() }}

@@ -45,8 +45,9 @@ echo $user['username'];
     {{ Form::hidden('question_id', $question['id']) }}
 
 
-    {{ Form::submit('Submit Answer!') }}
-
+<button type="submit" class="btn btn-default btn-sm">
+ 		 <span ></span> Answer!
+		</button>
   {{ Form::close() }}
 
  @stop
