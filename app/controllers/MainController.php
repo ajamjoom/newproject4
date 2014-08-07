@@ -23,8 +23,7 @@ class MainController extends BaseController{
 
 		$questions->save();
 		
-		 return Redirect::to('/add_question')->with('flash_message', 'Question Succefully Posted!!');
-	
+		 return Redirect::to('/add_question')->with('flash_message', '<div class="alert alert-success" role="alert">Question Succefully Posted!!</div>');
 	}
 
 	public function showallquestions(){
@@ -58,12 +57,12 @@ class MainController extends BaseController{
 				if (!$user->questions->contains($_POST["question_id"])) {
   				
 					$user->questions()->attach($_POST["question_id"]);	
-					return Redirect::to('/view_all_questions')->with('flash_message', 'Questions Succefully placed in your Library');
-				
+					return Redirect::to('/view_all_questions')->with('flash_message', '<div class="alert alert-success" role="alert">Questions Succefully placed in your Library</div>');
+
 				}
 				
 				else{	
-					return Redirect::to('/view_all_questions')->with('flash_message', 'You already have this question in your library');
+					return Redirect::to('/view_all_questions')->with('flash_message', '<div class="alert alert-warning" role="alert">You already have this question in your library</div>');
 
 				}
 			}

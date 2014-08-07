@@ -12,10 +12,11 @@ class AuthenticationController extends BaseController{
 		$credentials = Input::only('username', 'password');
 
             if (Auth::attempt($credentials, $remember = true)) {
-                return Redirect::intended('/')->with('flash_message', 'Welcome Back!');
+                return Redirect::intended('/')->with('flash_message', '<div class="alert alert-success" role="alert">Welcome Back!!! </div>');
             }
             else {
-                return Redirect::to('/login')->with('flash_message', 'Log in failed; please try again.');
+                return Redirect::to('/login')->with('flash_message', '<div class="alert alert-danger" role="alert">Log in failed; please try again.</div>');
+        		
             }
 
             return Redirect::to('login');
@@ -39,9 +40,10 @@ class AuthenticationController extends BaseController{
 		if($validator->fails()) {
 
     		return Redirect::to('/signup')
-        		->with('flash_message', 'Sign up failed; please fix the errors listed below.')
-        		->withInput()
-        		->withErrors($validator);
+        		->with('flash_message', "<div class='alert alert-danger' role='alert'>Sign up failed; please fix the errors listed below.</div>");
+        	//show errors not working
+        		//->withInput();
+        	//	->withErrors($validator);
 			}
 		 
 		 $user = new User;
@@ -56,13 +58,14 @@ class AuthenticationController extends BaseController{
             }
             # Fail
             catch (Exception $e) {
-                return Redirect::to('/signup')->with('flash_message', 'Sign up failed; please try again.')->withInput();
+                return Redirect::to('/signup')->with('flash_message','<div class="alert alert-danger" role="alert">Sign Up failed, please try again</div>');
+           //->withInput();
             }
 
             # Log the user in
             Auth::login($user);
 
-            return Redirect::to('/')->with('flash_message', 'Welcome to What??');
+            return Redirect::to('/')->with('flash_message', '<div class="alert alert-success" role="alert">You have succefully created logged in </div>');
 
 		
 	}
