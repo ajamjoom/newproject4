@@ -29,7 +29,7 @@
  			 Log In
 		</button>
 	{{ Form::close() }}
-
+<!--
 
 <form class="col-md-12" action="/login" method="POST">
     <div class="form-group">
@@ -44,4 +44,5 @@
         <span class="pull-right"><a href="/signup">New Registration</a></span>
     </div>
 </form>
+-->
 @stop
