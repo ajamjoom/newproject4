@@ -31,11 +31,14 @@ Route::post('/debating', array( 'before' => 'auth', 'uses' => 'MainController@pr
 
 Route::get('/signup', array( 'before' => 'guest', 'uses' => 'AuthenticationController@showsignup'));
 
-Route::post('/signup', array('before' => 'csrf', 'uses' => 'AuthenticationController@proccesssignup'));
+//If I don't comment out the filter the bootsrap Sign Up doesnt work!!
+
+Route::post('/signup', array(/*'before' => 'csrf',*/ 'uses' => 'AuthenticationController@proccesssignup'));
 
 Route::get('/login', array( 'before' => 'guest', 'uses' => 'AuthenticationController@showlogin'));
 
-Route::post('/login', array('before' => 'csrf', 'uses' => 'AuthenticationController@proccesslogin'));
+//If I don't comment out the filter the bootsrap login doesnt work!!
+Route::post('/login', array(/*'before' => 'csrf', */'uses' => 'AuthenticationController@proccesslogin'));
 
 Route::get('/logout', 'AuthenticationController@logout');
 

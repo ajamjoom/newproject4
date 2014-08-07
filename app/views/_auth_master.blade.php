@@ -19,8 +19,7 @@
    
     @if(Auth::check())
     <a href='/logout'>Log Out {{ Auth::user()->username; }}</a>
-	@else 
-    <a href='/signup'><span class="label label-success">Sign Up</span></a> or <a href='/login'>Log In</a>
+	
 	@endif
 
 	@yield('content')
