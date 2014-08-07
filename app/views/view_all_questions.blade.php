@@ -14,8 +14,9 @@
 
 		{{ Form::label('query','Search for questions:') }} &nbsp;
 		{{ Form::text('query', 'Search by Question, Genre or Context') }} &nbsp;
-		{{ Form::submit('Search!') }}
-
+		<button type="submit" class="btn btn-default btn-lg">
+ 		 <span class="glyphicon glyphicon-search"></span>
+		</button>
 	{{ Form::close() }}
 
  	@foreach($questions as $question)
@@ -27,7 +28,9 @@
 			{{ Form::hidden('added_question', 'add') }}
 			{{ Form::hidden('question_id', $question['id']) }}
 
-			{{ Form::submit('+ Add to Library') }}
+		<button type="submit" class="btn btn-default btn-lg">
+ 		 <span class="glyphicon glyphicon-plus"></span>To Library
+		</button>
 
 		{{ Form::close() }}
 	

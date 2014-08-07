@@ -16,8 +16,10 @@
 
 			{{ Form::hidden('question_id', $question['id']) }}
 
-			{{ Form::submit(' Open Forum') }}
-
+		<button type="submit" class="btn btn-default btn-lg">
+ 		<span class="glyphicon glyphicon-comment"></span> Open Forum
+		</button>
+		
 		{{ Form::close() }}
 
 		<br>
@@ -26,8 +28,10 @@
 			{{ Form::hidden('question_id', $question['id']) }}
 			{{ Form::hidden('delete_from_library', 'delete') }}
 
-			{{ Form::submit(' Delete') }}
-
+		<button type="submit" class="btn btn-default btn-lg">
+ 		 <span class="glyphicon glyphicon-trash"></span>
+		</button>
+		
 		{{ Form::close() }}
 		
 		<br>

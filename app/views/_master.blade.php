@@ -23,16 +23,14 @@
     <a href='/signup'>Sign Up</a> or <a href='/login'>Log In</a>
 	@endif
 
-	<dev class='linksbar'>
-	 	<br>
-	 	<a href = '/'>Home</a>
-	 	<br>
-	 	<a href = '/add_question'>Ask a Question</a>
-	 	<br>
-	 	<a href = '/view_all_questions'>View All Questions</a>
-	 	<br>
-	 	<a href = '/view_all_my_forums'>My Library</a>
-	</dev>
+		<ul class="nav nav-tabs" role="tablist">
+  		
+  		<li class="active"><a href="/">Home</a></li>
+  		<li><a href = '/view_all_questions'>View All Questions</a></li>
+ 		<li><a href = '/add_question'>Ask a Question</a></li>
+  		<li><a href = '/view_all_my_forums'>My Library</a></li>
+		
+		</ul>
 	
 	@yield('content')
 
