@@ -79,7 +79,7 @@ class MainController extends BaseController{
 	
 		$user = User::find(Auth::user()->id);
 		$user->questions()->detach($_POST["question_id"]);
-		return View::make('view_all_my_forums')->with('user', $user);
+		return Redirect::to('view_all_my_forums')->with('user', $user)->with('flash_message','<div class="alert alert-success" role="alert">Question removed from library</div>');
 
 	}
 

@@ -1,3 +1,23 @@
+##live URL
+
+<http://ajamjoom-what.gopagoda.com/>
+
+##github repository Link
+
+<https://github.com/ajamjoom/newproject4>
+
+##Sources
+
+I have used Bootsrap for designing purposes.
+
+##Site Discription
+
+Quora is a version of my website on steroids, What?? is a simple website where users can create and ask questions, put them in context and choose a genre for each question and then start a discussion were all users can answer questions and interact with each other.
+
+##Creator/Developer
+
+Abdulrahman Jamjoom Harvard Dynamic Web Development summer course
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
