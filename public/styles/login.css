@@ -1,4 +1,6 @@
 body
 {
-background-image:url('desert-car.jpg');
+background-image:url('../images/desert-car.jpg');
+background-size: cover;
+background-repeat: no-repeat;
 }

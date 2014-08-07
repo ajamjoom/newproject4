@@ -9,13 +9,13 @@
 @section('head')
 
 <!--link to login.css to view background image(not working) -->
-	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="stylesheet"  href="{{ asset('styles/login.css')}}">
 
 @stop
 
  @section('content')
-	
-	<h1>What??</h1>
+	<br><br><br>
+	<center><h1>What??</h1><center>
 
 <form class="col-md-12" action="/login" method="POST">
     <div class="form-group">
