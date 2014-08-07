@@ -18,9 +18,15 @@
     @endif
 
     @if(Auth::check())
-    <a href='/logout'>Log Out {{ Auth::user()->username; }}</a>
-	@else 
-    <a href='/signup'>Sign Up</a> or <a href='/login'>Log In</a>
+    
+    <div class="user_status">
+    
+    	<a href='/logout'>Log Out {{ Auth::user()->username; }}</a>
+		@else 
+    	<a href='/signup'>Sign Up</a> or <a href='/login'>Log In</a>
+	
+	</div>
+	
 	@endif
 
 		<ul class="nav nav-tabs" role="tablist">
