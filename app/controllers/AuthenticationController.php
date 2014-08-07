@@ -40,10 +40,10 @@ class AuthenticationController extends BaseController{
 		if($validator->fails()) {
 
     		return Redirect::to('/signup')
-        		->with('flash_message', "<div class='alert alert-danger' role='alert'>Sign up failed; please fix the errors listed below.</div>");
+        		->with('flash_message', '<div class="alert alert-danger" role="alert">Sign up failed; please fix the errors listed below.</div>')
         	//show errors not working
-        		//->withInput();
-        	//	->withErrors($validator);
+        		->withInput()
+        		->withErrors($validator);
 			}
 		 
 		 $user = new User;
@@ -58,8 +58,8 @@ class AuthenticationController extends BaseController{
             }
             # Fail
             catch (Exception $e) {
-                return Redirect::to('/signup')->with('flash_message','<div class="alert alert-danger" role="alert">Sign Up failed, please try again</div>');
-           //->withInput();
+                return Redirect::to('/signup')->with('flash_message','<div class="alert alert-danger" role="alert">Sign Up failed, please try again</div>')
+           ->withInput();
             }
 
             # Log the user in
