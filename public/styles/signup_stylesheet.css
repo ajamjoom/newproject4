@@ -1,4 +1,10 @@
-.error{
-	color: red;
-	font-size: small;
+
+body
+{
+background-image:url('../images/desert-railroad.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+}
+h1{
+	color:white;
 }

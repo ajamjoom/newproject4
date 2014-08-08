@@ -9,6 +9,7 @@
 ##Sources
 
 I have used Bootsrap for designing purposes.
+I took the pictures from <http://www.desktopexchange.net/>
 
 ##Site Discription
 

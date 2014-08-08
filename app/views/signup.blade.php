@@ -7,14 +7,15 @@
  @stop
 
  @section('head')
-<!--not working
-    <link rel="stylesheet" href="public/styles/signup_stylesheet.css" type="text/css">
--->
+    <link rel="stylesheet"  href="{{ asset('styles/signup_stylesheet.css')}}">
+
  @stop
 
  @section('content')
 
- 	<h1>Sign Up</h1>
+    <br><br><br>
+
+ 	<center><h1>Sign Up</h1><center>
 
  <form class="col-md-12" action="/signup" method="POST">
    

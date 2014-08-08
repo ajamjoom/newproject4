@@ -6,7 +6,6 @@
 	<title>@yield('title','What??')</title>
 	<link rel="stylesheet" href="//MAXCDN.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-
 	@yield('head')
 
 </head>
