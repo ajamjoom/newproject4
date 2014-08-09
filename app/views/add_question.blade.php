@@ -8,7 +8,7 @@
 
  @section('content')
 
- 	<h1>"Wisdom begins in wonder." -Socrates</h1>
+ <center>	<h1>"Wisdom begins in wonder." -Socrates</h1>
 <!-- form to add a new question -->
  	{{ Form::open(array('url' => '/add_question', 'method' => 'POST')) }}
 
@@ -28,5 +28,5 @@
  			  Ask!
 		</button>
 	{{ Form::close() }}
-
+</center>
  @stop

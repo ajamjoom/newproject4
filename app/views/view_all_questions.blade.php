@@ -7,7 +7,7 @@
  @stop
 
  @section('content')
-
+<center>
  	<h1>Previously Asked Questions</h1>
 
  	<form class="navbar-form navbar-left" role="search" method="GET" action="/view_all_questions" >
@@ -60,5 +60,5 @@
 		<hr>
 
 	@endforeach
-
+</center>
  @stop

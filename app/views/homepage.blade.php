@@ -7,7 +7,7 @@
  @stop
 
  @section('content')
-
+<center>
  <h1>Welcome to What??</h1>
  	
  <p>
@@ -17,6 +17,8 @@ Have fun,
 <br>
 Abdul
 </p>
+</center>
+<!-- center the search bar-->
 <!--search bar-->
 <form class="navbar-form navbar-left" role="search" method="GET" action="/view_all_questions" >
   		

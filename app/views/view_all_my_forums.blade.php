@@ -7,14 +7,14 @@
  @stop
 
  @section('content')
-
+<center>
  	<h1>My Library</h1>
 	
 	@foreach ($user->questions as $question)
     
 		{{ Form::open(array('url' => '/debating' , 'method' => 'GET')) }}
 
-			{{ Form::hidden('question_id', $question['id']) }}
+		{{ Form::hidden('question_id', $question['id']) }}
 
 		<button type="submit" class="btn btn-default btn-sm">
  		<span class="glyphicon glyphicon-comment"></span> Open Forum
@@ -53,6 +53,5 @@
 		<hr>	
 	
 	@endforeach
+ </center>
  @stop
-
-
