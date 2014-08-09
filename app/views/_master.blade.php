@@ -4,9 +4,9 @@
 		<meta charset='utf-8'>
 
 	<title>@yield('title','What??')</title>
+<!--online version of the Bootsrap style sheet -->
 <link rel="stylesheet" href="//MAXCDN.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	
-
 	@yield('head')
 
 </head>
@@ -16,7 +16,7 @@
 	 @if(Session::get('flash_message'))
         <div class='flash-message'>{{ Session::get('flash_message') }}</div>
     @endif
-
+<!--Bootsrap navigation bar for all pages after logging in -->
 		<ul class="nav nav-tabs" role="tablist">
   		
   		<li class="active"><a href="/">Home</a></li>

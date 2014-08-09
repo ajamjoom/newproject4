@@ -12,11 +12,13 @@ class AuthenticationController extends BaseController{
 		$credentials = Input::only('username', 'password');
 
             if (Auth::attempt($credentials, $remember = true)) {
+                //if user is not new but have just signed In and he put the correct credentials then he gets a succes massege welcoming him back
                 return Redirect::intended('/')->with('flash_message', '<div class="alert alert-success" role="alert">Welcome Back!!! </div>');
             }
+           
             else {
-                return Redirect::to('/login')->with('flash_message', '<div class="alert alert-danger" role="alert">Log in failed; please try again.</div>');
-        		
+                //if Singing In doesn't work then user is alerted by a flash txt
+                return Redirect::to('/login')->with('flash_message', '<div class="alert alert-danger" role="alert">Log in failed; please try again.</div>');	
             }
 
             return Redirect::to('login');
@@ -30,7 +32,8 @@ class AuthenticationController extends BaseController{
 	}
 	
 	public function proccesssignup(){
-		$rules = array(
+		//rules to validate for when signing Up a new user
+        $rules = array(
     		'email' => 'email|unique:users,email',
     		'password' => 'min:6'   
 		);          
@@ -38,19 +41,18 @@ class AuthenticationController extends BaseController{
 		$validator = Validator::make(Input::all(), $rules);
 
 		if($validator->fails()) {
-
+            //what to print when validation for new user doesn't work
     		return Redirect::to('/signup')
         		->with('flash_message', '<div class="alert alert-danger" role="alert">Sign up failed; please fix the errors listed below.</div>')
-        	//show errors not working
         		->withInput()
         		->withErrors($validator);
 			}
-		 
-		 $user = new User;
+		 //If Sign Up works then a new user is created
+		    $user = new User;
            
-         $user->username = Input::get('username');
-         $user->email    = Input::get('email');
-         $user->password = Hash::make(Input::get('password'));
+            $user->username = Input::get('username');
+            $user->email    = Input::get('email');
+            $user->password = Hash::make(Input::get('password'));
 
             # Try to add the user 
             try {
@@ -74,7 +76,7 @@ class AuthenticationController extends BaseController{
 
 	Auth::logout();
 
-    # Send them to the homepage
+    # Send them to the homepage then from there they will get redirected to the log in page because the homepage is locked up
     return Redirect::to('/');
 
 	}
