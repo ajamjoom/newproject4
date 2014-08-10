@@ -15,17 +15,38 @@ class MainController extends BaseController{
 	}
 
 	public function processaddquestion(){
+		//rules to validate for when adding a question 
+        //context field it not mandatory
+        $rules = array(
+    		'Question' => 'required',   
+    		'Genre' => 'required',   
+
+		);  
+		$validator = Validator::make(Input::all(), $rules);
+	 if($validator->fails()) {
+            //what to print when validation for new user doesn't work
+    		return Redirect::to('/add_question')
+        		->with('flash_message', '<div class="alert alert-danger" role="alert">Adding Question Failed failed; please fix the errors listed below.</div>')
+        		->withInput()
+        		->withErrors($validator);
+			}
 		//when a user adds a questions through the form in the add_question page this code adds the question (creates new question)->POST
 		$questions = new Question();
 
 		$questions->Question = Input::get('Question');
 		$questions->Context = Input::get('Context');
 		$questions->Genre = Input::get('Genre');
-
+try{
 		$questions->save();
+	}
+	catch(Exception $e){
+		 return Redirect::to('/add_question')->with('flash_message','<div class="alert alert-danger" role="alert">Adding Question failed, please try again</div>')
+           ->withInput();
+	}
 		//if question is succefully created then send flash txt notifying the user
 		 return Redirect::to('/add_question')->with('flash_message', '<div class="alert alert-success" role="alert">Question Succefully Posted!!</div>');
 	}
+
 
 	public function showallquestions(){
 //got this chunk of code's structure from foobooks->search method
